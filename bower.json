@@ -1,0 +1,16 @@
+{
+  "name": "adapt-vmcq",
+  "version": "0.0.1",
+  "framework":"2.0.0",
+  "homepage": "https://github.com/sarveshwar-gavhane/adapt-vmcq",
+  "authors": [
+   "sarveshwar gavhane <sarveshwar.gavhane@newgen-ent.com>"
+  ],
+  "description": "Video multiple choice question",
+  "main": "/js/adapt-vmcq.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPLv3"
+}

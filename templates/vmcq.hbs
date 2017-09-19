@@ -1,0 +1,44 @@
+<div class="vmcq-inner component-inner">
+    {{> component this}}
+    <div class="vmcq-widget component-widget{{#unless _isEnabled}} disabled {{/unless}} {{#if _isComplete}} complete submitted user {{#if _isCorrect}}correct{{/if}} {{/if}}{{#if _completeOnWatched}} complete-on-watched {{/if}}">
+        {{#each _items}}
+        <div class="vmcq-item item {{#unless ../_isEnabled}} {{#if correct}}correct{{else}}incorrect{{/if}} {{/unless}} item-{{@index}} {{odd @index}}">
+             
+            <label for="{{../_id}}-{{@index}}" class="{{#if selected}}selected{{/if}}">
+            
+                <div class="vmcq-item-checkbox">
+                    <div class="vmcq-item-state">
+                        <div class="vmcq-item-icon vmcq-answer-icon icon"></div>
+                        <div class="vmcq-item-icon vmcq-correct-icon icon icon-tick"></div>
+                        <div class="vmcq-item-icon vmcq-incorrect-icon icon icon-cross"></div>
+                    </div>
+                    <h5 class="vmcq-item-inner">
+                        {{{text}}}
+                    </h5>
+                </div>
+
+                {{#if _media.ogg}}
+                    <audio src="{{_media.ogg}}" type="audio/ogg"/>
+                {{else}}
+                    
+                    <video preload="none" poster="{{_media.poster}}" width="640px" height="360px" style="width:100%; height:100%;">
+                        {{#if _media.source}}
+                            <source src="{{_media.source}}" type="{{_media.type}}"/>
+                        {{else}}
+                            <source src="{{_media.mp4}}" type="video/mp4"/>
+                            <source src="{{_media.ogv}}" type="video/ogg"/>
+                        {{/if}}
+                    </video>
+                
+                {{/if}}
+
+                <div class="vmcq-item-footer vmcq-item-inner">{{{footer}}}</div>
+            </label>
+            <input type="checkbox" id="{{../_id}}-{{@index}}"/>
+        </div>
+        {{/each}}
+        
+    </div>
+    <div class="buttons">
+    </div>
+</div>
